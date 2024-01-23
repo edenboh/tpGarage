@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class UserController extends AbstractController
 {
     #[Route('/', name: 'app_admin_user_index', methods: ['GET'])]
-    public function index(UserRepository $userRepository): Response
+    public function index(UserRepository $userRepository): Response //il peut voir que les user type utilisateur
     {
         $lesUtilisateur=$userRepository->findAll();
         $monTabUser=array_filter($lesUtilisateur,function ($user){
